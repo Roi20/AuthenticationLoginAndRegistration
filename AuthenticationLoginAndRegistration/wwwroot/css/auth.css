@@ -1,0 +1,52 @@
+﻿
+body {
+
+   
+    
+}
+.wrap 
+{
+    
+    display: flex;
+    width: 80%;
+    height: 80vh;
+   
+}
+.cover 
+{
+    background-image: Url('/images/bg1.jpg');
+    background-position-y: center;
+    background-size: cover;
+    opacity: 0.8;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    max-width: 100%;
+}
+
+#col
+{
+    flex: 1;
+    padding: 1em;
+    
+}
+.row
+{
+    justify-content: center;
+}
+
+
+.main
+{
+    display: flex;
+    background-color: red;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    align-items: center;
+    justify-content: center;
+}
+label
+{
+    margin-bottom: 5px;
+}
+
+
