@@ -1,0 +1,18 @@
+﻿@model Todo
+
+<div class="content">
+    <h2 class="text-light">Delete To do</h2>
+    <hr />
+    <div class="row">
+        <form asp-action="ConfirmedDelete" asp-route-id="@Model.id" method="post">
+            @Html.AntiForgeryToken()
+            <div class="alert alert-warning">
+                Are you sure want to delete this <strong>@Model.Name</strong>, from your todo list ?
+            </div>
+            <div class="col-12">
+                <a asp-action="index" class="btn btn-primary">Cancel</a>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+        </form>
+    </div>
+</div>

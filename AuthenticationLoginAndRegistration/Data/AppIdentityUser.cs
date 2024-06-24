@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AuthenticationLoginAndRegistration.Data.Entities;
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
 namespace AuthenticationLoginAndRegistration.Data
@@ -13,5 +14,7 @@ namespace AuthenticationLoginAndRegistration.Data
 
         [StringLength(100)]
         public string Companyname { get; set; }
+
+        public virtual ICollection<Todo> Todo { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using AuthenticationLoginAndRegistration.Data.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AuthenticationLoginAndRegistration.Data
@@ -9,5 +10,10 @@ namespace AuthenticationLoginAndRegistration.Data
             : base(options)
         {
         }
+
+
+        public virtual DbSet<Todo> Todos { get; set; }
     }
+
+
 }

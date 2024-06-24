@@ -1,3 +1,4 @@
+using AuthenticationLoginAndRegistration.Contracts;
 using AuthenticationLoginAndRegistration.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -6,13 +7,11 @@ using System.Diagnostics;
 namespace AuthenticationLoginAndRegistration.Controllers
 {
     [Authorize]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        
-
         public HomeController()
         {
-           
+          
         }
 
         public IActionResult Index()
@@ -31,5 +30,6 @@ namespace AuthenticationLoginAndRegistration.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        
     }
 }

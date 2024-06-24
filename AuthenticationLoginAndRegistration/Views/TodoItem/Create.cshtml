@@ -1,0 +1,50 @@
+﻿@using AuthenticationLoginAndRegistration.Data
+@using Microsoft.AspNetCore.Identity
+@model Todo
+@inject UserManager<AppIdentityUser> UserManager
+
+
+<div class="content">
+    <h2 class="text-light">New To do</h2>
+    <hr />
+    <div class="row">
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+            <!--div class="form-group">
+                <label asp-for="aspUser_Id"></label>
+                <input value="@UserManager.GetUserId(User)" asp-for="aspUser_Id" class="form-control" />
+                <span asp-validation-for="aspUser_Id"></span>
+            </div-->
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control"/>
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Description"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Time"></label>
+                <input asp-for="Time" type="time" class="form-control"/>
+                <span asp-validation-for="Time"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date"></label>
+                <input asp-for="Date" type="date" class="form-control"/>
+                <span asp-validation-for="Date"></span>
+            </div>
+            <div class="col-12">
+                <a asp-action="Index" class="btn btn-danger">Cancel</a>
+                <button class="btn btn-success" type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
