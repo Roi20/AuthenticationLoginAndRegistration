@@ -3,7 +3,7 @@
 @model Todo
 @inject UserManager<AppIdentityUser> UserManager
 
-
+@*
 <div class="content">
     <h2 class="text-light">New To do</h2>
     <hr />
@@ -42,7 +42,13 @@
         </form>
     </div>
 </div>
+*@
+<partial name="_CrudCreate" />
 
+@section CustomScripts {
+
+    <script src="@Url.Content("~/js/sample.js")"></script>
+}
 
 
 

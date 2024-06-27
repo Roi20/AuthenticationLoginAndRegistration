@@ -1,7 +1,8 @@
 ﻿@model Todo
-
+<vc:my-model></vc:my-model>
+@*
 <div class="content">
-    <h2>Update To do</h2>
+    <h2 class="text-light">Update To do</h2>
     <hr />
     <div class="row">
         <form asp-action="Update" method="post">
@@ -33,3 +34,10 @@
         </form>
     </div>
 </div>
+@await Component.InvokeAsync("MyModel")
+*@
+
+@section CustomScripts {
+
+    <script src="@Url.Content("~/js/sample.js")"></script>
+}

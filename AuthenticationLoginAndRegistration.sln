@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationLoginAndRegistration", "AuthenticationLoginAndRegistration\AuthenticationLoginAndRegistration.csproj", "{B4B7AA74-637A-4C74-AD7A-C9E209B4056E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListProject", "TodoListProject\TodoListProject.csproj", "{B3249FF2-E318-4EB9-98F6-EB776083D79A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoListProject", "TodoListProject\TodoListProject.csproj", "{B3249FF2-E318-4EB9-98F6-EB776083D79A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,26 @@
+﻿@model Todo
+<!-- Modal -->
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete</h5>
+                <a asp-action="Index"  class="btn btn-secondary" aria-label="">
+                    <span aria-hidden="true">&times;</span>
+                </a>
+            </div>
+            <div class="modal-body">
+                @Html.AntiForgeryToken()
+                Are you sure you want to delete <strong>@Model.Name</strong> ?
+            </div>
+            <div class="modal-footer">
+                <a asp-action="ConfirmedDelete" asp-route-id="@Model.id"  class="btn btn-danger">Delete</a>
+                <a asp-action="Index" class="btn btn-secondary" id="closeBtn">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+@section CustomScripts {
+
+    <script src="@Url.Content("~/js/sample.js")"></script>
+}

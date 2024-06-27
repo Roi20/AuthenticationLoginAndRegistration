@@ -1,6 +1,8 @@
 using AuthenticationLoginAndRegistration.Contracts;
 using AuthenticationLoginAndRegistration.Data;
 using AuthenticationLoginAndRegistration.Repositories;
+using AuthenticationLoginAndRegistration.Services;
+using AuthenticationLoginAndRegistration.TodoService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +17,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<AppIdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+builder.Services.AddScoped<ITodoService, TodoService>();
 builder.Services.AddControllersWithViews();
 
 

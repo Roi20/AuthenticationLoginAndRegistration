@@ -1,0 +1,49 @@
+﻿@model Todo
+<!-- Modal -->
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit</h5>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <span aria-hidden="true">&times;</span>
+                </a>
+            </div>
+            <div class="modal-body">
+                @Html.AntiForgeryToken()
+                <form asp-action="Update" asp-route-id="@Model.id" method="post">
+                    <div class="form-group">
+                        <label asp-for="Name"></label>
+                        <div><span asp-validation-for="Name" class="text-danger text-sm-center"></span></div>
+                        <input type="text" class="form-control" asp-for="Name" value="@Model.Name">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description"></label>
+                        <div><span asp-validation-for="Description" class="text-danger"></span></div>
+                        <textarea asp-for="Description" class="form-control" rows="3" value="@Model.Description"></textarea>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label asp-for="Time"></label>
+                        <div><span asp-validation-for="Time" class="text-danger"></span></div>
+                        <input asp-for="Time" type="time" class="form-control"/>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label asp-for="Date"></label>
+                        <div><span asp-validation-for="Date" class="text-danger"></span></div>
+                        <input asp-for="Date" type="date" class="form-control" />
+                    </div>
+                    <div class="mt-3 float-end">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <a asp-action="Index" class="btn btn-secondary" id="closeBtn">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section CustomScripts {
+
+    <script src="@Url.Content("~/js/sample.js")"></script>
+}

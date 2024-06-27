@@ -1,5 +1,5 @@
 ﻿@model Todo
-
+@*
 <div class="content">
     <h2 class="text-light">Delete To do</h2>
     <hr />
@@ -16,3 +16,9 @@
         </form>
     </div>
 </div>
+*@
+<partial name="_CrudDelete" />
+@section CustomScripts {
+
+    <script src="@Url.Content("~/js/sample.js")"></script>
+}
