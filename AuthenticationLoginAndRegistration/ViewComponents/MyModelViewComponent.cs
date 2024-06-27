@@ -16,7 +16,7 @@ namespace AuthenticationLoginAndRegistration.ViewComponents
         {
 
             
-            TempData["Message"] = "Create";
+            
             return View();
        
 
