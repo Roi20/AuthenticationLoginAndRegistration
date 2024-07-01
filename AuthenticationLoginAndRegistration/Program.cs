@@ -1,5 +1,7 @@
 using AuthenticationLoginAndRegistration.Contracts;
 using AuthenticationLoginAndRegistration.Data;
+using AuthenticationLoginAndRegistration.Data.Entities;
+using AuthenticationLoginAndRegistration.EmailService;
 using AuthenticationLoginAndRegistration.Repositories;
 using AuthenticationLoginAndRegistration.Services;
 using AuthenticationLoginAndRegistration.TodoService;
@@ -7,6 +9,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var EMAIL_SETTINGS_CONFIG = "EmailSettings";
+
+var config = builder.Configuration;
+
+builder.Services.Configure<EmailSettings>(config.GetSection(EMAIL_SETTINGS_CONFIG));
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -18,6 +26,7 @@ builder.Services.AddDefaultIdentity<AppIdentityUser>(options => options.SignIn.R
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 builder.Services.AddScoped<ITodoService, TodoService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddControllersWithViews();
 
 
