@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Authentication";
+    ViewBag.Title = "Todo List";
 }
 
 <!DOCTYPE html>
@@ -37,9 +37,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link text-light" asp-area="" asp-controller="TodoItem" asp-action="Index">Todo</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <!--li class="nav-item">
                                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                                        </li>
+                                        </!--li-->
                                     </ul>
                                     <partial name="_LoginPartial" />
                                 </div>
@@ -54,7 +54,7 @@
             </div>
             <div class="col-12" id="footer">
                 <footer class="text-light">
-                    &copy; 2024 - AuthenticationLoginAndRegistration - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    &copy; 2024 - Todo List - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                 </footer>
             </div>
         </div>

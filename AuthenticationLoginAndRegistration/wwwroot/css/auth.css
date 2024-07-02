@@ -138,3 +138,12 @@ label
     }
     
 }
+
+/*ForgotPassword.cshtml*/
+#resetSubmit
+{
+    font-variant-caps: all-small-caps;
+    margin-top: 20px;
+    color: white;
+    background: linear-gradient(to bottom right, rgba(24, 41, 120, 1), rgba(102, 136, 204, 1), rgba(172, 191, 130, 1));
+}
