@@ -7,18 +7,24 @@
     {
         Layout = "/Areas/Identity/Pages/_Layout.cshtml";
     }
+
+  
 }
 
-<h1>Manage your account</h1>
+@section CustomStyles {
+    <link rel="stylesheet" href="@Url.Content("~/css/manageacc.css")" />
+}
 
-<div>
+<h1 class="text-light">Manage your account</h1>
+
+<div class="container bg-warning" id="layout">
     <h2>Change your account settings</h2>
     <hr />
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-4 bg-secondary">
             <partial name="_ManageNav" />
         </div>
-        <div class="col-md-9">
+        <div class="col-8 bg-info">
             @RenderBody()
         </div>
     </div>

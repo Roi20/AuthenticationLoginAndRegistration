@@ -3,13 +3,166 @@ body
 {
 
 }
+
+/*Login Form*/
+#loginContainer
+{
+    
+}
+
+#imgHolder, img
+{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#formHolder
+{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: rgba(31, 48, 68, .9);
+    
+}
+img
+{
+    filter: brightness(85%);
+}
+#h1Text
+{
+    text-align: center;
+    font-weight: bold;
+    font-variant-caps: all-small-caps;
+}
+
+
+@media  only screen and (max-width: 992px)
+{
+
+    img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+    }
+
+    #formHolder, form {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 0px;
+    }
+
+}
+/*login*/
+#inputHolder
+{
+    text-align: center;
+}
+
+
+#formHolder h6
+{
+    text-align:center;
+}
+input::placeholder 
+{
+    font-variant-caps: all-small-caps;
+    color: white;
+      
+}
+
+#inputHolder input
+{
+    width: 60%;
+    height: 35px;
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: #fff;
+    background: transparent;
+    color: #fff;
+}
+#checkBox
+{
+
+  text-align:center;
+}
+#checkBox label
+{
+     width: 60%;
+     text-align: start; 
+     font-size: 70%;
+}
+#validation
+{
+    font-size: 65%;
+    text-align: center;
  
+}
+#btnHolder
+{
+    text-align: center;
+}
+#btnHolder button 
+{
+    font-variant-caps: all-small-caps;
+    color: #fff !important;
+    font-weight: bold;
+    border: 1px solid #FF5F1F;
+    width: 60%;
+}
+#btnHolder button:hover
+{
+    color: #0FFF50 !important;
+}
+
+#forgotPassHolder
+{
+   
+    text-align: center
+  
+}
+
+#forgotPassHolder label
+{
+    width: 60%;
+    font-size: 60%;
+    text-align: end;
+
+}
+#forgotPassHolder label a:hover
+{
+    color: #1F51FF !important;
+}
+
+
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input--webkit-text-fill-color,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: white !important;
+}
+
+
+
+
+/*
 .container
 {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
-
+/*Login
+#loginContainer 
+{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
 
 
 label
@@ -31,6 +184,7 @@ label
 .form-group
 {
     width: 100%;
+
    
 }
 .card
@@ -38,6 +192,7 @@ label
    border-radius: 10px;
    background-color: blue;
    border: none;
+   width: 30%;
 }
 
 .card .card-body
@@ -93,7 +248,7 @@ label
    
 }
 
-/*For Login chstml only*/
+/*For Login chstml only
 
 .checkbox label
 {
@@ -139,7 +294,7 @@ label
     
 }
 
-/*ForgotPassword.cshtml*/
+/*ForgotPassword.cshtml
 #resetSubmit
 {
     font-variant-caps: all-small-caps;
@@ -147,3 +302,13 @@ label
     color: white;
     background: linear-gradient(to bottom right, rgba(24, 41, 120, 1), rgba(102, 136, 204, 1), rgba(172, 191, 130, 1));
 }
+
+/*ResetPassword.cshtml
+#reset-submit 
+{
+    font-variant-caps: all-small-caps;
+    margin-top: 20px;
+    color: white;
+    background: linear-gradient(to bottom right, rgba(24, 41, 120, 1), rgba(102, 136, 204, 1), rgba(172, 191, 130, 1));
+}
+*/

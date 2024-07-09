@@ -47,18 +47,22 @@
                         </nav>
                     </header>
                  </div>
-            <div class="col-12">
-                <main role="main" class="pb-3">
-                    @RenderBody()
-                </main>
-            </div>
-            <div class="col-12" id="footer">
-                <footer class="text-light">
-                    &copy; 2024 - Todo List - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                </footer>
-            </div>
-        </div>
-     </div>
+               </div>
+               <div class="row" id="body">
+                    <div class="col-12">
+                        <main role="main" class="pb-3 h-100">
+                            @RenderBody()
+                        </main>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-4" id="footer">
+                        <footer class="text-light">
+                            &copy; 2024 - Todo List - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </footer>
+                    </div>
+                </div>
+    </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

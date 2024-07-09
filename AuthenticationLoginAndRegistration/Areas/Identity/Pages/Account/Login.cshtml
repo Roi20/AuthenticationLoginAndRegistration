@@ -10,43 +10,44 @@
     <link rel="stylesheet" href="@Url.Content("~/css/auth.css")"/>
 }
 
-<div class="container mt-3">
-    <div>
-        <div class="card">
-            <div class="card-header">
-                <h2>Login</h2>
-            </div>
-            <div class="card-body">
-                <form id="account" method="post">
-                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-                    <span asp-validation-for="Input.Email" class="text-danger" id="validation"></span>
-                    <div class="form-group input-group mb-3 flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </span>
-                        <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="email" />
-                    </div>
-                    <span asp-validation-for="Input.Password" class="text-danger" id="validation"></span>
-                    <div class="form-group input-group flex-nowrap mb-3">
-                        <span class="input-group-text" id="addon-wrapping">
-                            <i class="fa-solid fa-user-lock"></i>
-                        </span>
-                        <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                    </div>
-                        <div class="col-12 checkbox">
-                            <label asp-for="Input.RememberMe" class="form-label float-start">
-                                <input class="form-check-input" asp-for="Input.RememberMe" />
-                                @Html.DisplayNameFor(m => m.Input.RememberMe)
-                            </label>
-                             <span class="">
-                                <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                            </span>
-                        </div>
-                    <div>
-                        <button id="login-submit" type="submit" class="w-100 btn mt-3">Log in</button>
-                    </div>
-                </form>
-            </div>
+<div class="container mt-5 h-80" id="loginContainer">
+    <div class="row p-0 h-80">
+        <div class="col-md-7 p-0" id="imgHolder">
+           <img src="~/images/blackandwhitebg.jpg" class="p-0" height="100%" width="100%"/>
+        </div>
+        <div class="col-md-5 p-0" id="formHolder">
+            <h2 class="text-light mt-2" id="h1Text">Login</h2>
+            <hr class="text-secondary"/>
+            <h6 class="text-light p-2 mb-0">Welcome back!</h6>
+            <h6 class="text-light p-2 mt-0 fw-bold">
+                Manage your To do's <br />
+                by login your account
+            </h6>
+            <form id="account" method="post" class="mt-0">
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div id="validation"><span asp-validation-for="Input.Email" class="text-danger"></span></div>
+                <div class="form-group mb-2 p-1" id="inputHolder">
+                    <input asp-for="Input.Email" autocomplete="username" aria-required="true" placeholder="email" />
+                </div>
+                <div id="validation"><span asp-validation-for="Input.Password" class="text-danger"></span></div>
+                <div class="form-group p-1" id="inputHolder">
+                    <input asp-for="Input.Password" autocomplete="current-password" aria-required="true" placeholder="password" />
+                </div>
+                <div class="col-12 checkbox p-2 mt-0 mb-3" id="checkBox">
+                    <label asp-for="Input.RememberMe" class="form-label text-light">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                    </label>
+                </div>
+                <div class="p-1" id="btnHolder">
+                    <button id="login-submit" type="submit" class="btn mt-2">Login</button>
+                </div>
+                <div id="forgotPassHolder">
+                    <label class="p-0">
+                        <a class="text-light text-decoration-none" id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                    </label>
+                </div>
+            </form>
         </div>
     </div>
     <!--div class="col-md-6 col-md-offset-2">
