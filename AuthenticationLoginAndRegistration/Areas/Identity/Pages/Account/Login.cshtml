@@ -10,21 +10,22 @@
     <link rel="stylesheet" href="@Url.Content("~/css/auth.css")"/>
 }
 
-<div class="container mt-5 h-80" id="loginContainer">
-    <div class="row p-0 h-80">
-        <div class="col-md-7 p-0" id="imgHolder">
+<div class="container mt-5 h-100" id="loginContainer">
+    <div class="row p-0" id="rowContainer">
+        <div class="col-lg-7 p-0" id="imgHolder">          
            <img src="~/images/blackandwhitebg.jpg" class="p-0" height="100%" width="100%"/>
         </div>
-        <div class="col-md-5 p-0" id="formHolder">
-            <h2 class="text-light mt-2" id="h1Text">Login</h2>
-            <hr class="text-secondary"/>
-            <h6 class="text-light p-2 mb-0">Welcome back!</h6>
-            <h6 class="text-light p-2 mt-0 fw-bold">
-                Manage your To do's <br />
-                by login your account
-            </h6>
-            <form id="account" method="post" class="mt-0">
-                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+        <div class="col-lg-5 p-0" id="formHolder">
+            <div class="mt-5" id="textHolder">
+                <h2 class="text-light text-start mb-3" id="h1Text">Login</h2>
+                <p class="text-light text-start mb-0">Welcome back!</p>
+                <h5 class="text-light text-start mt-0 fw-bold">
+                    Manage your To do's <br />
+                    by login your account
+                </h5>
+            </div>
+            <form id="account" method="post" class="mt-xl-5 mt-sm-3">
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert" id="validation"></div>
                 <div id="validation"><span asp-validation-for="Input.Email" class="text-danger"></span></div>
                 <div class="form-group mb-2 p-1" id="inputHolder">
                     <input asp-for="Input.Email" autocomplete="username" aria-required="true" placeholder="email" />
@@ -33,16 +34,17 @@
                 <div class="form-group p-1" id="inputHolder">
                     <input asp-for="Input.Password" autocomplete="current-password" aria-required="true" placeholder="password" />
                 </div>
-                <div class="col-12 checkbox p-2 mt-0 mb-3" id="checkBox">
+                <div class="col-12 checkbox p-2 mt-0 mb-xl-3 mb-lg-1" id="checkBox">
                     <label asp-for="Input.RememberMe" class="form-label text-light">
                         <input class="form-check-input" asp-for="Input.RememberMe" />
                         @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        <span><a class="text-light text-decoration-none float-end" asp-page="./Register">Register</a></span>
                     </label>
                 </div>
                 <div class="p-1" id="btnHolder">
                     <button id="login-submit" type="submit" class="btn mt-2">Login</button>
                 </div>
-                <div id="forgotPassHolder">
+                <div id="forgotPassHolder" class="pb-3">
                     <label class="p-0">
                         <a class="text-light text-decoration-none" id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
                     </label>
