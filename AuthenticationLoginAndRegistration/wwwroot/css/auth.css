@@ -4,7 +4,7 @@ body
 
 }
 
-/*Reference Login/Registration razorview*/
+/*This styles where Reference to Login/Registration/ForgotPassword/ResetPassword razorview*/
 
 #textHolder
 {
@@ -42,7 +42,6 @@ img
     
 }
 
-/*Login*/
 @media only screen and (max-width: 992px) {
 
     img {
@@ -58,7 +57,6 @@ img
     }
 }
 
-/*Login*/
 @media only screen and (max-width: 992px)
 {
     #imgHolder {
@@ -78,7 +76,7 @@ img
     }
 }
 
-/*login*/
+
 #inputHolder
 {
     text-align: center;
@@ -102,7 +100,7 @@ input::placeholder
     background: transparent;
     color: #fff;
     caret-color: #fff !important;
-    font-size: 70%;
+    font-size: 80%;
 }
 #checkBox
 {
@@ -150,7 +148,7 @@ input::placeholder
     text-align: center
   
 }
-/*Reference Login/Registration razorview*/
+
 #forgotPassHolder label, #loginTextHolder label
 {
     width: 60%;
@@ -167,7 +165,7 @@ input::placeholder
     }
 
 
-/*Reference Login/Registration razorview*/
+/*For input field style and transparent background */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -177,7 +175,6 @@ input:-webkit-autofill:active
     transition: background-color 5000s ease-in-out 0s;
     -webkit-text-fill-color: white !important;
    
-
 }
 
 
