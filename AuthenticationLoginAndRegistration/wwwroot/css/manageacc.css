@@ -1,16 +1,95 @@
-﻿
-/*Layout*/
-#layout
+﻿#layout 
 {
-   
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-   
+    background: rgba(31, 48, 68, .9);
+    border-radius: 10px;
 }
-.col-4, .col-8 
+#ulList
 {
-    display: flex;
-    flex-direction: column;
-    height: 300px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+/*Index*/
+#ulList .col a
+{
+    font-size: 80%;
+    color: #fff;
+}
+
+#mainBody
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#validation 
+{
+    font-size: 65%;
+    text-align: center;
+}
+
+#textTitle h3
+{
+    width: 60%;
+    margin-left:auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+
+#btnHolder
+{
+    text-align: center;
+}
+
+#btnHolder button 
+{
+    font-variant-caps: all-small-caps;
+    color: #fff !important;
+    font-weight: bold;
+    border: 2px solid #FF5F1F;
+    width: 60%;
+    font-size: 70%;
+}
+#btnHolder button:hover
+{
+    color: #0FFF50 !important;
+}
+
+#inputHolder 
+{
+    text-align: center;
+}
+
+input::placeholder 
+{
+    font-variant-caps: all-small-caps;
+    color: white;
+}
+
+#inputHolder input 
+{
+    width: 60%;
+    height: 35px;
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: #fff;
+    background: transparent;
+    color: #fff;
+    caret-color: #fff !important;
+    font-size: 80%;
+}
+
+
+
+
+/*For input field style and transparent background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input--webkit-text-fill-color,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: white !important;
 }
