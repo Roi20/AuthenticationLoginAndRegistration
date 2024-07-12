@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="@Url.Content("~/css/manageacc.css")"/>
 }
 
-<ul class="nav nav-pills flex justify-content-center" id="ulList">
+<ul class="nav nav-tabs justify-content-center border-bottom-0" id="ulList">
     <li class="col nav-item"><a class="nav-link @ManageNavPages.IndexNavClass(ViewContext)" id="profile" asp-page="./Index">Profile</a></li>
     <li class="col nav-item"><a class="nav-link @ManageNavPages.EmailNavClass(ViewContext)" id="email" asp-page="./Email">Email</a></li>
     <li class="col nav-item"><a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext)" id="change-password" asp-page="./ChangePassword">Password</a></li>
