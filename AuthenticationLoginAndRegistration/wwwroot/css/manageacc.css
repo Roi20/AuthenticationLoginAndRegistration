@@ -37,7 +37,7 @@
     text-align: center;
 }
 
-#textTitle h3, p
+#textTitle h3, p, #alertDelete
 {
     width: 60%;
     margin-left:auto;
@@ -65,7 +65,12 @@
     color: #0FFF50 !important;
 }
 /*Personal data download button*/
-#btnHolder #downloadBtn:hover
+#btnHolder #downloadBtn:hover 
+{
+    color: #fff !important;
+}
+
+#btnHolder #deleteData:hover
 {
     color: #fff !important;
 }
@@ -80,6 +85,7 @@
     width: 60%;
     font-size: 70%;
 }
+/*Delete Personal Data*/
 
 
 #inputHolder 
