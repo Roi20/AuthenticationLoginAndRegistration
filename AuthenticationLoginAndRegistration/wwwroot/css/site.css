@@ -17,7 +17,7 @@ body
 {
     //margin-bottom: 60px;
     font-family: Montserrat, sans-serif;
-    min-height: 100vh;
+   // min-height: 100vh;
     display: flex;
     flex-direction: column;
     background: linear-gradient(to bottom right, rgba(31, 48, 68, .7), rgba(100, 108, 121, .5)), url("/images/building.jpg");
@@ -26,9 +26,10 @@ body
 
 }
 
-.row
+#body
 {
-   min-height: 100vh;
+   min-height: 85vh;
+  
    
 }
 

@@ -9,101 +9,54 @@
     <link rel="stylesheet" href="@Url.Content("~/css/auth.css")"/>
 }
 
-
-<div class="container mt-3">
-        <div class="col-md-4">
-           <div class="card">
-               <div class="card-header">
-                   <h2>Register</h2>
-               </div>
-               <div class="card-body">
-                    <form class="mt-2" id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-                        <span asp-validation-for="Input.FirstName" class="text-danger" id="validation"></span>
-                        <div class="form-group mb-2 input-group flex-nowrap">
-                             <span class="input-group-text" id="addon-wrapping">
-                                 <i class="fa-solid fa-user-tie"></i>
-                             </span>
-                             <input asp-for="Input.FirstName" class="form-control" autocomplete="firstname" aria-required="true" placeholder="firstname" />
-                        </div>
-                        <span asp-validation-for="Input.LastName" class="text-danger" id="validation"></span>
-                        <div class="form-group mb-2 input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">
-                                <i class="fa-solid fa-user-tie"></i>
-                            </span>
-                            <input asp-for="Input.LastName" class="form-control" autocomplete="lastname" aria-required="true" placeholder="lastname" />
-                        </div>
-                        <span asp-validation-for="Input.Email" class="text-danger" id="validation"></span>
-                        <div class="form-group mb-2 input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">
-                                <i class="fa-solid fa-envelope"></i>
-                            </span>
-                            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="email" />
-                        </div>
-                         <span asp-validation-for="Input.CompanyName" class="text-danger" id="validation"></span>
-                        <div class="form-group mb-2 input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">
-                                <i class="fa-solid fa-building"></i>
-                            </span>
-                            <input asp-for="Input.CompanyName" class="form-control" autocomplete="company" aria-required="true" placeholder="company" />
-                        </div>
-                         <span asp-validation-for="Input.Password" class="text-danger" id="validation"></span>
-                        <div class="form-group mb-2 input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">
-                                <i class="fa-solid fa-user-lock"></i>
-                            </span>
-                            <input asp-for="Input.Password" id="pass" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                        </div>
-                        <div class="form-group mb-2 input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">
-                                <i class="fa-solid fa-user-check"></i>
-                            </span>
-                            <input asp-for="Input.ConfirmPassword" id="cPass" class="form-control" autocomplete="new-password" aria-required="true" placeholder="confirm password" />
-                        </div>
-                         <span asp-validation-for="Input.ConfirmPassword" class="text-danger" id="validation"></span>
-                        <button id="registerSubmit" type="submit" class="w-100 btn">Register</button>
-                    </form>
-                 </div>
-           </div>
+<div class="container mt-5" id="loginContainer">
+    <div class="row p-0" id="rowContainer">
+        <div class="col-lg-7 p-0" id="imgHolder">
+            <img src="~/images/blackandwhitebg.jpg" class="p-0" height="100%" width="100%" />
         </div>
-    <!--
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to register.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins!)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>-->
+        <div class="col-lg-5 p-0" id="formHolder">
+            <div class="mt-5" id="textHolder">
+                <h2 class="text-light text-start mb-3" id="h1Text">Register</h2>
+            </div>
+            <form class="mt-xl-4 mt-sm-3" id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert" id="validation"></div>
+                <div id="validation"><span asp-validation-for="Input.CompanyName" class="text-danger"></span></div>
+                <div class="form-group mb-2 p-1" id="inputHolder">
+                    <input asp-for="Input.CompanyName" autocomplete="firstname" aria-required="true" placeholder="Company" />
+                </div>
+                <div id="validation"><span asp-validation-for="Input.FirstName" class="text-danger"></span></div>
+                <div class="form-group mb-2 p-1" id="inputHolder">
+                    <input asp-for="Input.FirstName" autocomplete="firstname" aria-required="true" placeholder="firstname" />
+                </div>
+                <div id="validation"><span asp-validation-for="Input.LastName" class="text-danger"></span></div>
+                <div class="form-group mb-2 p-1" id="inputHolder">
+                    <input asp-for="Input.LastName" autocomplete="lastname" aria-required="true" placeholder="lastname" />
+                </div>
+                <div id="validation"><span asp-validation-for="Input.Email" class="text-danger"></span></div>
+                <div class="form-group mb-2 p-1" id="inputHolder">
+                    <input asp-for="Input.Email" autocomplete="username" aria-required="true" placeholder="email" />
+                </div>
+                <div id="validation"><span asp-validation-for="Input.Password" class="text-danger"></span></div>
+                <div class="form-group mb-2 p-1" id="inputHolder">
+                    <input asp-for="Input.Password" id="pass" autocomplete="new-password" aria-required="true" placeholder="password" />
+                </div>
+                <div id="validation"><span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span></div>
+                <div class="form-group mb-2 p-1" id="inputHolder">
+                    <input asp-for="Input.ConfirmPassword" id="cPass" autocomplete="new-password" aria-required="true" placeholder="confirm password" />
+                </div>
+                <div class="pb-1" id="btnHolder">
+                    <button id="registerSubmit" type="submit" class="btn mt-2">Register</button>
+                </div>
+                <div id="forgotPassHolder" class="pb-3">
+                    <label class="p-0">
+                        <a class="text-light text-decoration-none" id="loginTextHolder" asp-page="./Login">Login here</a>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-}
-
-@section CustomScripts{
-
-    <script src="@Url.Content("~/js/auth.js")"></script>
 }

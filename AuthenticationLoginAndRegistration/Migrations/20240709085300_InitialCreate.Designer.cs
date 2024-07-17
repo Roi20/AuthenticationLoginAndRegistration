@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace AuthenticationLoginAndRegistration.Data.Migrations
+namespace AuthenticationLoginAndRegistration.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240620100737_TodoTable")]
-    partial class TodoTable
+    [Migration("20240709085300_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

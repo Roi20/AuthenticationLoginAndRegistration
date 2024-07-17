@@ -4,5 +4,8 @@
     ViewData["Title"] = "Confirm email";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 class="text-light">@ViewData["Title"]</h1>
+<p class="text-light">
+    Your email has been confirmed <a asp-page="./Login">click here</a> to login
+</p>
 <partial name="_StatusMessage" model="Model.StatusMessage" />

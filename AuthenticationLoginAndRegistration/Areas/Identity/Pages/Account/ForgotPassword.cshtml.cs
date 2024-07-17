@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using AuthenticationLoginAndRegistration.Services;
 
 namespace AuthenticationLoginAndRegistration.Areas.Identity.Pages.Account
 {
@@ -21,11 +22,13 @@ namespace AuthenticationLoginAndRegistration.Areas.Identity.Pages.Account
     {
         private readonly UserManager<AppIdentityUser> _userManager;
         private readonly IEmailSender _emailSender;
+        private readonly IEmailService _emailService;
 
-        public ForgotPasswordModel(UserManager<AppIdentityUser> userManager, IEmailSender emailSender)
+        public ForgotPasswordModel(UserManager<AppIdentityUser> userManager, IEmailSender emailSender, IEmailService emailService)
         {
             _userManager = userManager;
             _emailSender = emailSender;
+            _emailService = emailService;
         }
 
         /// <summary>
@@ -71,7 +74,8 @@ namespace AuthenticationLoginAndRegistration.Areas.Identity.Pages.Account
                     values: new { area = "Identity", code },
                     protocol: Request.Scheme);
 
-                await _emailSender.SendEmailAsync(
+                //_emailSender.SendEmailAsync
+                await _emailService.Send(
                     Input.Email,
                     "Reset Password",
                     $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");

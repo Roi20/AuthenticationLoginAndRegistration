@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Authentication";
+    ViewBag.Title = "Todo List";
 }
 
 <!DOCTYPE html>
@@ -31,15 +31,15 @@
                                 </button>
                                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                                     <ul class="navbar-nav flex-grow-1">
-                                        <li class="nav-item">
+                                        <!--li class="nav-item">
                                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                                        </li>
+                                        </--li-->
                                         <li class="nav-item">
                                             <a class="nav-link text-light" asp-area="" asp-controller="TodoItem" asp-action="Index">Todo</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <!--li class="nav-item">
                                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                                        </li>
+                                        </!--li-->
                                     </ul>
                                     <partial name="_LoginPartial" />
                                 </div>
@@ -47,18 +47,22 @@
                         </nav>
                     </header>
                  </div>
-            <div class="col-12">
-                <main role="main" class="pb-3">
-                    @RenderBody()
-                </main>
-            </div>
-            <div class="col-12" id="footer">
-                <footer class="text-light">
-                    &copy; 2024 - AuthenticationLoginAndRegistration - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                </footer>
-            </div>
-        </div>
-     </div>
+               </div>
+               <div class="row" id="body">
+                    <div class="col-12">
+                        <main role="main" class="pb-3 h-100 p-sm-0">
+                            @RenderBody()
+                        </main>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-4" id="footer">
+                        <footer class="text-light">
+                            &copy; 2024 - Todo List - <span asp-area="" asp-controller="Home">Roi</span>
+                        </footer>
+                    </div>
+                </div>
+    </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

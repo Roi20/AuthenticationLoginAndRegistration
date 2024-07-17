@@ -1,0 +1,141 @@
+﻿#layout 
+{
+    background: rgba(31, 48, 68, .9);
+    border-radius: 10px;
+}
+#ulList
+{
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+/*Index*/
+#ulList .col a
+{
+    font-size: 80%;
+    color: #fff;
+}
+
+#ulList .col .nav-link.active 
+{
+    font-size: 80%;
+    border: 2px solid #FF5F1F !important;
+    border-radius: 5px;
+    background: none;    
+}
+
+#mainBody
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#validation 
+{
+    font-size: 65%;
+    text-align: center;
+}
+
+#textTitle h3, p, #alertDelete
+{
+    width: 60%;
+    margin-left:auto;
+    margin-right: auto;
+    
+}
+
+
+#btnHolder
+{
+    text-align: center;
+}
+
+#btnHolder button
+{
+    font-variant-caps: all-small-caps;
+    color: #fff !important;
+    font-weight: bold;
+    border: 2px solid #FF5F1F;
+    width: 60%;
+    font-size: 70%;
+}
+#btnHolder button:hover
+{
+    color: #0FFF50 !important;
+}
+/*Personal data download button*/
+#btnHolder #downloadBtn:hover 
+{
+    color: #fff !important;
+}
+
+#btnHolder #deleteData:hover
+{
+    color: #fff !important;
+}
+
+/*Personal data delete button*/
+#btnHolder span a
+{
+    font-variant-caps: all-small-caps;
+    color: #fff !important;
+    font-weight: bold;
+    //border: 2px solid #FF5F1F;
+    width: 60%;
+    font-size: 70%;
+}
+/*Delete Personal Data*/
+
+
+#inputHolder 
+{
+    text-align: center;
+}
+
+input::placeholder 
+{
+    font-variant-caps: all-small-caps;
+    color: white;
+}
+
+#inputHolder input 
+{
+    width: 60%;
+    height: 35px;
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: #fff;
+    background: transparent;
+    color: #fff;
+    caret-color: #fff !important;
+    font-size: 80%;
+}
+
+/*inputfields with input-group-text
+#inputHolder #inGroup
+{
+    width: 55%;
+    height: 35px;
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: #fff;
+    background: transparent;
+    color: #fff;
+    caret-color: #fff !important;
+    font-size: 80%;
+}
+    */
+
+
+
+
+/*For input field style and transparent background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input--webkit-text-fill-color,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: white !important;
+}

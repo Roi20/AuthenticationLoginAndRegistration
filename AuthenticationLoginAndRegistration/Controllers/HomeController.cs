@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace AuthenticationLoginAndRegistration.Controllers
 {
-    [Authorize]
+
     public class HomeController : BaseController
     {
         public HomeController()

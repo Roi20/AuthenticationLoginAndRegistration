@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using AuthenticationLoginAndRegistration.Data;
+using AuthenticationLoginAndRegistration.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -21,15 +22,18 @@ namespace AuthenticationLoginAndRegistration.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<AppIdentityUser> _userManager;
         private readonly SignInManager<AppIdentityUser> _signInManager;
         private readonly IEmailSender _emailSender;
+        private readonly IEmailService _emailService;
 
         public EmailModel(
             UserManager<AppIdentityUser> userManager,
             SignInManager<AppIdentityUser> signInManager,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IEmailService emailService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
+            _emailService = emailService;
         }
 
         /// <summary>
@@ -124,7 +128,9 @@ namespace AuthenticationLoginAndRegistration.Areas.Identity.Pages.Account.Manage
                     pageHandler: null,
                     values: new { area = "Identity", userId = userId, email = Input.NewEmail, code = code },
                     protocol: Request.Scheme);
-                await _emailSender.SendEmailAsync(
+
+                // _emailSender.SendEmailAsync
+                await _emailService.Send(
                     Input.NewEmail,
                     "Confirm your email",
                     $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
@@ -160,7 +166,7 @@ namespace AuthenticationLoginAndRegistration.Areas.Identity.Pages.Account.Manage
                 pageHandler: null,
                 values: new { area = "Identity", userId = userId, code = code },
                 protocol: Request.Scheme);
-            await _emailSender.SendEmailAsync(
+            await _emailService.Send(
                 email,
                 "Confirm your email",
                 $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
